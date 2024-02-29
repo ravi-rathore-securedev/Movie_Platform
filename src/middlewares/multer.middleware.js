@@ -13,6 +13,6 @@ const storage = multer.diskStorage({
    storage
  })
 
- export const uploadMultiple = multer({ storage }).array('files', 2);
+
 
  

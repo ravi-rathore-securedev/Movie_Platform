@@ -2,10 +2,11 @@ import express from "express";
 import cors from 'cors'
 import cookieParser from "cookie-parser";
 
-//express app 
+//defining express app 
 const app = express()
 
-// cors use
+// cors use for cross origin as middleware
+//defining origin and credentials
 app.use(cors({
     origin:process.env.CORS_ORIGIN,
      credentials:true
@@ -30,13 +31,14 @@ app.use(express.static("public"))
 app.use(cookieParser())
 
 
-//routes
+//routes import
 import userRouter from './routes/user.route.js'
+import videoRouter from './routes/video.routes.js'
 
 
 //routes declaration
 app.use("/test",userRouter)
-
+app.use("/video",videoRouter)
 
 
 

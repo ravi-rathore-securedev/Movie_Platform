@@ -5,6 +5,9 @@ import express from "express"
 import connectDB from "./db/index.js";
 import app from "./app.js";
 
+
+//configure .env file path to access env variables 
+//done by dotenv package
 dotenv.config({
     path: './.env'
 })
@@ -12,6 +15,7 @@ dotenv.config({
 
 
 // connect db mongodb
+//use connectDB function from db/index.js
 connectDB()
 .then(()=>{
     app.listen(process.env.PORT || 3000, ()=>{
@@ -24,8 +28,7 @@ console.log("MongoDB Connection Failed",error);
 
 
 
-
-
+// another method to connect
 /*
 ( async () => { 
     try {

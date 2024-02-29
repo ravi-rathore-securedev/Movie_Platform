@@ -1,3 +1,7 @@
+
+//asynhandler to handle request and response to efficieny
+
+
 const asyncHandler = (requestHandler) => {
     return (req,res,next) => {
         Promise.resolve(requestHandler(req,res,next)).catch((error) => next(error))
